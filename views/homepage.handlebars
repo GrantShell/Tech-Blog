@@ -1,0 +1,41 @@
+<header class='py-5 bg-info border-bottom mb-4'>
+	<div class='container'>
+		<div class='text-center my-5'>
+			<h1 class='fw-bolder'>Welcome to Tech Blog!</h1>
+			<p class='lead mb-0'>Check out our latest posts from contributors below!</p>
+		</div>
+	</div>
+</header>
+
+<div class='d-flex justify-content-center bg-secondary py-5'>
+	<div {{#if logged_in}}class='col-6' {{else}} class="col-9" {{/if}}>
+		{{#each posts as |post|}}
+
+			<div class='text-center'>
+				<div class='card mt-3'>
+					<div class='card-body'>
+						<div class='small text-muted'>created
+							{{format_date post.date_created}}
+							by
+							<a href=''>{{user.name}}</a></div>
+						<h2 class='card-title'>{{post.header}}</h2>
+						<p class='card-text'>{{truncate_post post.body}}</p>
+						<a class='btn btn-primary' href='/post/{{post.id}}'>Read more →</a>
+					</div>
+				</div>
+			</div>
+
+		{{/each}}
+	</div>
+	{{#if logged_in}}
+		<div class='card col-3 align-self-start mt-3'>
+			<div class='card-header'><p class="small text-muted">Logged in as</p><h3>{{home_user.name}}</h3></div>
+			<div class='card-body'>This will have multiple profile items in it
+				<p></p>
+				<p>Total number of posts created: 000</p>
+				<p>Total number of comments created: 000</p>
+				<p>Last time seen online: xDay</p>
+			</div>
+		</div>
+	{{/if}}
+</div>

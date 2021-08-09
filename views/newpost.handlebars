@@ -1,0 +1,30 @@
+<h2 class="pt-3">Create a New post:</h3>
+<div class='d-flex justify-content-center'>
+
+	<form class='form new-post-form col-6'>
+		<div class='form-group'>
+			<label class='text-light' for='post-header'>Post Title:</label>
+			<input
+				class='form-control'
+				type='text'
+				id='post-header'
+				name='post-header'
+			/>
+		</div>
+		<div class='form-group'>
+			<label class='text-light' for='post-body'>Post Body:</label>
+			<textarea
+				rows='20'
+				class='form-control'
+				id='post-body'
+				name='post-body'
+			></textarea>
+		</div>
+		<label for='post-body' class='small text-light'>Limit 5000 characters</label>
+		<div class='form-group'>
+			<button type='submit' class='btn btn-primary'>Create</button>
+		</div>
+	</form>
+</div>
+
+<script src='./js/post.js'></script>
