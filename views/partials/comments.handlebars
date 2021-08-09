@@ -1,0 +1,10 @@
+{{#each comments as |comment|}}
+  <div class="d-flex flex-fill justify-content-start">
+    <div class="ms-3 mt-4 border flex-fill">
+      <div class="font-weight-bold">{{comment.user.name}}
+        on
+        {{format_date comment.date_created}}</div>
+      {{comment.body}}
+    </div>
+  </div>
+{{/each}}
